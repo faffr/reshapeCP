@@ -23,34 +23,34 @@ reshapeCP = function(form, NitemsInPanel, NitemsInModule, outName = NULL){
   Nmodules = length(NitemsInModule)
   
   #LEVEL 1: TEST FORM INFORMATINO AND PANEL INFORMATION
-  PanelID = BPform[, grepl("Panel.ID", names(BPform))]
-  PanelName = BPform[, grepl("Panel.Name", names(BPform))]
-  PanelStatus = BPform[, grepl("Panel.Status", names(BPform))]
-  PanelNotes = BPform[, grepl("Panel.Notes", names(BPform))]
+  PanelID = form[, grepl("Panel.ID", names(form))]
+  PanelName = form[, grepl("Panel.Name", names(form))]
+  PanelStatus = form[, grepl("Panel.Status", names(form))]
+  PanelNotes = form[, grepl("Panel.Notes", names(form))]
   
   #LEVEL 2
-  modID = BPform[, grepl("Module.ID", names(BPform))]
-  modName = BPform[,grepl("Module.Name", names(BPform))]
-  modStatus = BPform[, grepl("Module.Status", names(BPform))]
-  modNotes = BPform[,grepl("Module.Notes", names(BPform))]
+  modID = form[, grepl("Module.ID", names(form))]
+  modName = form[,grepl("Module.Name", names(form))]
+  modStatus = form[, grepl("Module.Status", names(form))]
+  modNotes = form[,grepl("Module.Notes", names(form))]
   
   #LEVEL 3
-  itemID = BPform[, grepl("Item.ID", names(BPform))]
-  itemName = BPform[, grepl("Item.Name", names(BPform))]
-  itemStatus = BPform[, grepl("Item.Status", names(BPform))]
-  itemSetup = BPform[, grepl("Item.Setup", names(BPform))]
-  itemPrompt = BPform[, grepl("Item.Prompt", names(BPform))]
-  itemGraphic = BPform[, grepl("Item.Graphic", names(BPform))]
-  itemRubric = BPform[, grepl("Scoring.Rubric", names(BPform))]
-  itemScale = BPform[, grepl("Measurement.Scale", names(BPform))]
-  itemDiffic = BPform[, grepl("Item.Difficulty", names(BPform))]
-  itemSelecDiff = BPform[, grepl("Selection.Difficulty", names(BPform))]
-  itemNotes = BPform[, grepl("Item.Notes", names(BPform))]
+  itemID = form[, grepl("Item.ID", names(form))]
+  itemName = form[, grepl("Item.Name", names(form))]
+  itemStatus = form[, grepl("Item.Status", names(form))]
+  itemSetup = form[, grepl("Item.Setup", names(form))]
+  itemPrompt = form[, grepl("Item.Prompt", names(form))]
+  itemGraphic = form[, grepl("Item.Graphic", names(form))]
+  itemRubric = form[, grepl("Scoring.Rubric", names(form))]
+  itemScale = form[, grepl("Measurement.Scale", names(form))]
+  itemDiffic = form[, grepl("Item.Difficulty", names(form))]
+  itemSelecDiff = form[, grepl("Selection.Difficulty", names(form))]
+  itemNotes = form[, grepl("Item.Notes", names(form))]
   
   if(length(itemID) != sum(NitemsInPanel) ){stop("Number of items specified does not match number of items in data")}
   
   #PUT TOGETHER LEVEL 1 FORM NAMES
-  dfForm = data.frame(rep(BPform[,grepl("Test.Form.ID", names(BPform))], sum(NitemsInPanel)), rep(BPform[,grepl("Test.Form.Name", names(BPform))], sum(NitemsInPanel)), rep(BPform[,grepl("Test.Family", names(BPform))], sum(NitemsInPanel))  )
+  dfForm = data.frame(rep(form[,grepl("Test.Form.ID", names(form))], sum(NitemsInPanel)), rep(form[,grepl("Test.Form.Name", names(form))], sum(NitemsInPanel)), rep(form[,grepl("Test.Family", names(form))], sum(NitemsInPanel))  )
   colnames(dfForm) = c("Test.Form.ID", "Test.Form.Name", "Test.Family")
   
   #PUT TOGETHER LEVEL 2 PANEL NAMES
