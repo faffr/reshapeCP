@@ -19,11 +19,13 @@ reshapeCP(form, NitemsInPanel, NitemsInModule, outName = NULL)
 This function reshapes form data downloaded from ChangePond
 }
 \examples{
-###7 values for 7 panels. Each value represents the number of items in each panel.
+##7 values for 7 panels. Each value represents the number of items in each panel.
 ItemsInPanelsEPTS = c(3,3,4,5,5,5,10) 
-#18 values for 18 modules. Each value represents the number of items in each module.
+
+##18 values for 18 modules. Each value represents the number of items in each module.
 ItemsInModulesEPTS = c(3,3,2,2,1,2,2,1,2,2,1,2,2,2,2,2,2,2) 
-#EPTform is the data frame that is downloaded from CP and read in as a data frame.
+
+##EPTform is the data frame that is downloaded from CP and read in as a data frame.
 reshapeCP(EPTform, ItemsInPanelsEPTS, ItemsInModulesEPTS, outName = EPTform_clean)
 }
 \keyword{reshape}

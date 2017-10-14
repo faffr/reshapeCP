@@ -8,7 +8,7 @@
 #'@keywords reshape
 #'@export
 #'@examples
-#'###7 values for 7 panels. Each value represents the number of items in each panel.
+#'##7 values for 7 panels. Each value represents the number of items in each panel.
 #'ItemsInPanelsEPTS = c(3,3,4,5,5,5,10) 
 #'
 #'##18 values for 18 modules. Each value represents the number of items in each module.
